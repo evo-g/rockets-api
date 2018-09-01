@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-image: url('https://files.slack.com/files-pri/T0535UKR3-FCJL6T61Y/3526bf9a43add56a66dbbdba1af4bee5.png');
+
+  background-blend-mode: lighten;
+  ;
+}
+
+.big {
+  height: 25%;
+  width: 25%;
+}
