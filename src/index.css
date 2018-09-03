@@ -11,4 +11,21 @@ body {
 .big {
   height: 25%;
   width: 25%;
+  padding: 10%
+}
+
+.btn {
+  text-align: center;
+  margin: 50px 10px; 
+  padding: 5px; 
+}
+ul {
+  list-style: none;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  flex-direction: column;
+  
 }

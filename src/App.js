@@ -28,18 +28,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <button onClick={this.searchRockets}> click me for rockets </button>
-        <ul>
-          {this.state.rockets.map((rocket, index) => (
-            <li key={index} rocket={rocket}>
-              <div >
-                <div >{rocket.name}</div>
-                <div ><img className="big" src={rocket.imageURL} /></div>
-              </div>
-            </li>
-          ))}
-        </ul>
+      <div>
+        <button className="btn" onClick={this.searchRockets}> click me for rockets </button>
+        <div className="flex-container">
+          <ul>
+            {this.state.rockets.map((rocket, index) => (
+              <li key={index} rocket={rocket}>
+                <div >
+                  <div >{rocket.name}</div>
+                  <div ><img className="big flex-container" src={rocket.imageURL} /></div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }
