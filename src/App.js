@@ -29,14 +29,16 @@ class App extends Component {
   render() {
     return (
       <div>
+        <div className="btn-holder">
         <button className="btn" onClick={this.searchRockets}> click me for rockets </button>
-        <div className="flex-container">
+        </div>
+        <div className="">
           <ul>
             {this.state.rockets.map((rocket, index) => (
               <li key={index} rocket={rocket}>
-                <div >
-                  <div >{rocket.name}</div>
-                  <div ><img className="big flex-container" src={rocket.imageURL} /></div>
+                <div className="row" >
+                  <div className="column"><img className="big" src={rocket.imageURL} /></div>
+                  <div className="column">{rocket.name}<a href={rocket.wikiURL}>{rocket.wikiURL}</a></div>
                 </div>
               </li>
             ))}
