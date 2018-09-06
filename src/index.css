@@ -1,12 +1,14 @@
 body {
   font-family: sans-serif;
-  background-image: url('https://files.slack.com/files-pri/T0535UKR3-FCJL6T61Y/3526bf9a43add56a66dbbdba1af4bee5.png');
+  background-image: url('http://www.animated-gifs.eu/category_nature/space-rockets/0029.gif');
+  background-size: cover;
+  position: absolute;
 }
 
 .btn-holder {
   display: flex;
   justify-content: center;
-  height: 100px;
+  height: 50px;
   margin-top: 50px;
 }
 
@@ -16,18 +18,21 @@ body {
   color: white;
   border-radius: 10px;
 }
-ul {
+
+/* ul {
   list-style: none;
-}
-/* .flex-container {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
 } */
-.row {
+
+.flex-container {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 4px;
+  justify-content: space-evenly;
+}
+
+/* .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .column {
@@ -39,18 +44,22 @@ ul {
 .column img {
   margin-top: 8px;
   vertical-align: middle;
-}
+} */
 
-/* .flex-container > div {
-  background-color: aqua;
+.flex-container > div {
+  background-color: #367ABD;
   border-radius: 10px;
-  width: 600px;
+  width: 400px;
   margin: 25px;
   text-align: center;
   line-height: 75px;
   font-size: 30px;
-} */
+} 
 
 .big {
 width: 100%;
+}
+
+.editme {
+  font-size: 15px;
 }

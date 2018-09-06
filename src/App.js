@@ -12,37 +12,34 @@ class App extends Component {
   };
 
   searchRockets = () => {
-    //  let me = Math.floor(Math.random() * 30)
-    //  console.log(me);
     axios({
       method: 'get',
       url: `https://launchlibrary.net/1.4/rocket`
     })
       .then((response) => {
         console.log(response.data.rockets)
-        this.setState({ rockets: response.data.rockets })
+        this.setState({ rockets: response.data.rockets, filter: true })
       })
       .catch((error) => {
       })
   };
 
   render() {
+    var array = this.state.rockets
     return (
       <div>
         <div className="btn-holder">
-        <button className="btn" onClick={this.searchRockets}> click me for rockets </button>
+          <button className="btn" onClick={this.searchRockets}> click me for rockets </button>
         </div>
-        <div className="">
-          <ul>
-            {this.state.rockets.map((rocket, index) => (
-              <li key={index} rocket={rocket}>
-                <div className="row" >
-                  <div className="column"><img className="big" src={rocket.imageURL} /></div>
-                  <div className="column">{rocket.name}<a href={rocket.wikiURL}>{rocket.wikiURL}</a></div>
+        <div className=" flex-container">
+          { array.filter(rocket => rocket.imageURL).map((rocket, index) => (
+              <div key={index} rocket={rocket}>
+                <div >
+                  <div>{rocket.name}<img className="big" src={rocket.imageURL} /><a className="editme" href={rocket.wikiURL} target="blank">{rocket.wikiURL}</a></div>
                 </div>
-              </li>
+              </div>
+
             ))}
-          </ul>
         </div>
       </div>
     );
