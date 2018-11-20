@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import Hook from './Hook.jsx';
 
 class App extends Component {
   constructor() {
@@ -11,6 +12,7 @@ class App extends Component {
     this.searchRockets = this.searchRockets.bind(this);
   };
 
+
   searchRockets = () => {
     axios({
       method: 'get',
@@ -18,7 +20,7 @@ class App extends Component {
     })
       .then((response) => {
         console.log(response.data.rockets)
-        this.setState({ rockets: response.data.rockets, filter: true })
+        this.setState({ rockets: response.data.rockets })
       })
       .catch((error) => {
       })
@@ -33,13 +35,14 @@ class App extends Component {
         </div>
         <div className=" flex-container">
           { array.filter(rocket => rocket.imageURL).map((rocket, index) => (
-              <div key={index} rocket={rocket}>
+            <div key={index} rocket={rocket}>
                 <div >
                   <div>{rocket.name}<img className="big" src={rocket.imageURL} /><a className="editme" href={rocket.wikiURL} target="blank">{rocket.wikiURL}</a></div>
                 </div>
               </div>
 
             ))}
+          <Hook.js />   
         </div>
       </div>
     );
